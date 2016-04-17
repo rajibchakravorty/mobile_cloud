@@ -12,6 +12,8 @@ var appRouter = function(app) {
 
    app.post( "/checklogin", function( req, res ){
 
+      //if the request does not contain username
+      // or password, the server cannot do much, can it?
 
       if( !req.body.user || 
           !req.body.password ){
@@ -33,11 +35,14 @@ var appRouter = function(app) {
       if( req.body.user == "student" &&
           req.body.password == "letmein" ){
 
+          //send a success message and also the record shows
+          //that the student has great record
           return res.send( JSON.stringify( {"result":"success", "record":"Great Student" } ) );
 
       }
 
       else{
+          //well, it seems the user is not our student
           return res.send( JSON.stringify( {"result": "error", "description": "Incorrect credentials" } ) );
       }
       
