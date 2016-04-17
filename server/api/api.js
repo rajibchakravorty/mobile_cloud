@@ -12,8 +12,6 @@ var appRouter = function(app) {
 
    app.post( "/checklogin", function( req, res ){
 
-      console.log( "Frm checklogin:" );
-      console.log( req.body );
 
       if( !req.body.user || 
           !req.body.password ){
@@ -31,12 +29,10 @@ var appRouter = function(app) {
       //perhaps this one should accept encrypted parameters
       //instead !!!
 
-      console.log( req.body.user );
-      console.log( req.body.password );
       
       if( req.body.user == "student" &&
           req.body.password == "letmein" ){
-          console.log( JSON.stringify( { "result": "success","record":"Great Student" } ) );
+
           return res.send( JSON.stringify( {"result":"success", "record":"Great Student" } ) );
 
       }

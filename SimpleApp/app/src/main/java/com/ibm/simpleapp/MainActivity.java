@@ -28,9 +28,12 @@ import android.widget.Toast;
 import com.ibm.helper.TaskReceiver;
 import com.ibm.simpleapp.tasks.CheckLogin;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity implements TaskReceiver {
+
+    public static String _parsingError = "Server response is not understood";
 
     private ProgressDialog _pDialogue = null;
 
@@ -107,8 +110,22 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         //then check if this is the checklogin task
         if( source.equals( CheckLogin._taskID) ){
 
-            Toast.makeText( getApplicationContext() , response, Toast.LENGTH_LONG )
-                    .show();
+            try{
+                JSONObject responseObject = new JSONObject( response );
+
+                String record = responseObject.getString( "result" );
+                String success = responseObject.getString( "record" );
+                Toast.makeText( getApplicationContext() , record+":"+success, Toast.LENGTH_LONG )
+                        .show();
+
+            }
+            catch( JSONException je ){
+                Toast.makeText( getApplicationContext() , _parsingError, Toast.LENGTH_LONG )
+                        .show();
+
+            }
+
+
 
         }
 
