@@ -10,12 +10,15 @@ var appRouter = function(app) {
       res.send( "Hello World" );
    });
 
-   app.post( "/checkuser", function( req, res ){
+   app.post( "/checklogin", function( req, res ){
+
+      console.log( "Frm checklogin:" );
+      console.log( req.body );
 
       if( !req.body.user || 
           !req.body.password ){
-          
-          return res.send( {"result":"error", "description" : "Credential missing" } );
+          console.log( "Did not receive any credential" );          
+          return res.send( JSON.stringify( {"result":"error", "description" : "Credential missing" } ) );
       }
 
       //TODO:This function simply checks the user and
@@ -27,18 +30,21 @@ var appRouter = function(app) {
       //in plain text - not good for security.
       //perhaps this one should accept encrypted parameters
       //instead !!!
+
+      console.log( req.body.user );
+      console.log( req.body.password );
       
       if( req.body.user == "student" &&
           req.body.password == "letmein" ){
+          console.log( JSON.stringify( { "result": "success","record":"Great Student" } ) );
+          return res.send( JSON.stringify( {"result":"success", "record":"Great Student" } ) );
 
-          return res.send( {"result":"success", "record":"Great Student" } )
       }
 
       else{
-          return res.send( {"result": "error", "description": "Incorrect credentials" } );
+          return res.send( JSON.stringify( {"result": "error", "description": "Incorrect credentials" } ) );
       }
       
-
    });
  
 }
