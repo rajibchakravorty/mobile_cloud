@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ibm.helper.TaskReceiver;
@@ -72,8 +73,14 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         if( userText.getText().toString().equals( "") ||
                 passwordText.getText().toString().equals( "")    ){
 
-            Toast.makeText( getApplicationContext() , "username and password cannot be empty", Toast.LENGTH_LONG )
+            Toast.makeText( getApplicationContext() , "Username or Password cannot be empty", Toast.LENGTH_LONG )
                  .show();
+
+            //show a helpful error message
+            TextView errView = (TextView) findViewById( R.id.txtError );
+            errView.setText( "Username or Password cannot be empty" );
+
+            return;
 
         }
 
@@ -88,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         _pDialogue.setTitle("Logging in...");
         _pDialogue.setMessage("Sending credentials");
         _pDialogue.show();
+
+        //make sure there is no error message
+        TextView errView = (TextView) findViewById( R.id.txtError );
+        errView.setText("");
 
 
         CheckLogin cl = new CheckLogin( "http://10.0.2.2:3000/checklogin" );
@@ -113,10 +124,23 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
             try{
                 JSONObject responseObject = new JSONObject( response );
 
-                String record = responseObject.getString( "result" );
-                String success = responseObject.getString( "record" );
-                Toast.makeText( getApplicationContext() , record+":"+success, Toast.LENGTH_LONG )
-                        .show();
+                String result = responseObject.getString( "result" );
+
+                if( result.equals( "success" ) ){
+
+                    String record = responseObject.getString( "record" );
+                }
+                else{ //if the login is not successful
+
+                    String desc = responseObject.getString( "description" );
+
+                    //show the error
+                    TextView errView = (TextView) findViewById( R.id.txtError );
+                    errView.setText( desc );
+                    //Toast.makeText( getApplicationContext() , desc, Toast.LENGTH_LONG ).show();
+
+
+                }
 
             }
             catch( JSONException je ){
