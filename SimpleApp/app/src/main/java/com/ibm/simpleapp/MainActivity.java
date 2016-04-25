@@ -17,6 +17,7 @@
 package com.ibm.simpleapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
             @Override
             public void onClick(View v) {
 
+                //on button click, this application will use a REST API
+                //to access a resource on the back-end
                 checkLogin();
             }
 
@@ -73,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         if( userText.getText().toString().equals( "") ||
                 passwordText.getText().toString().equals( "")    ){
 
-            Toast.makeText( getApplicationContext() , "Username or Password cannot be empty", Toast.LENGTH_LONG )
-                 .show();
 
             //show a helpful error message
             TextView errView = (TextView) findViewById( R.id.txtError );
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         }
 
         //else assume everything is right from the client side
-        //pass the data to the client side for validation
+        //pass the data to the server side for validation
         //this would cause the application to wait
         //so start a progress dialogue and then pass the data
 
@@ -101,6 +102,19 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         errView.setText("");
 
 
+        //this is where the application makes a REST API call
+
+        //the remote resource is located on a server with
+        //IP address : 10.0.2.2
+        //PORT number : 3000
+        //this specific resource is identified by the URI "checklogin"
+        //within that server
+        //The full qualifying URI is therefore,
+        //http://10.0.2.2:3000/checklogin
+
+        //Android allows Asynchronous call to any remote functionality
+        //Therefore the system will execute the command and then wait
+        //for any response to come back from remote server
         CheckLogin cl = new CheckLogin( "http://10.0.2.2:3000/checklogin" );
         cl.setReceiver( this );
         cl.execute( userText.getText().toString(), passwordText.getText().toString() );
@@ -128,7 +142,14 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
 
                 if( result.equals( "success" ) ){
 
+                    //collect the information
                     String record = responseObject.getString( "record" );
+                    //navigate to the first page
+
+                    Intent intent = new Intent( this, FirstPage.class );
+                    intent.putExtra( "record", record );
+                    startActivity( intent );
+
                 }
                 else{ //if the login is not successful
 

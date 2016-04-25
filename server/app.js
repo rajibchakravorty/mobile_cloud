@@ -1,6 +1,6 @@
 /*
 
-R.Chakravorty, IBM Research, Australia, 2016
+R.Chakravorty, IBM Research, 2016
 */
 
 
@@ -15,4 +15,5 @@ var routes = require("./api/api.js")(app);
  
 var server = app.listen(3000, function () {
     console.log("Listening on port %s...", server.address().port);
+    console.log( "Starting a simple server" );
 });

@@ -1,14 +1,32 @@
 /*
-R Chakravorty, IBM Research, Australia, 2016
+R Chakravorty, IBM Research, 2016
 */
 
 var appRouter = function(app) {
 
-
+   //sample api 
    app.get( "/", function( req,res ){
 
       res.send( "Hello World" );
    });
+
+   /*
+    Function to check the user credential
+
+    This function is accessible by the
+    /checklogin URI, relative to the server
+    ip address
+
+    The function accepts a "Request" object
+    sent by any client by POST method. The user credential
+    is passed in the body of the request as JSON
+    object.
+
+    The function checks the user credential and prepares
+    another JSON object with required data for client-side
+    processing.
+   */
+   
 
    app.post( "/checklogin", function( req, res ){
 
@@ -37,7 +55,7 @@ var appRouter = function(app) {
 
           //send a success message and also the record shows
           //that the student has great record
-          return res.send( JSON.stringify( {"result":"success", "record":"Great Student" } ) );
+          return res.send( JSON.stringify( {"result":"success", "record":"You are outstanding" } ) );
 
       }
 

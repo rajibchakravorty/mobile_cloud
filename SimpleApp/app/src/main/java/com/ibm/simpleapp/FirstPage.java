@@ -1,7 +1,9 @@
 package com.ibm.simpleapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class FirstPage extends AppCompatActivity {
 
@@ -14,5 +16,13 @@ public class FirstPage extends AppCompatActivity {
 
         //retrieve the information passed on from the login page
         //and display that
+        Intent intent  = getIntent();
+        String record = intent.getStringExtra( "record" );
+
+        //display the record String in its correct place
+        TextView recordView = (TextView) findViewById( R.id.txtRecords );
+        recordView.setText( record );
+
+
     }
 }
