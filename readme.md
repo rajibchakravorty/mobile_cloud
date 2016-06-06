@@ -20,4 +20,14 @@ NodeJS on Bluemix.
 
 ### Links
 
+1. Full Playlist : https://www.youtube.com/playlist?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
 
+2. Introduction : https://youtu.be/94u5Q54Axzg?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+
+3. Part 1 - What is mobile cloud development and why do you need it? : https://youtu.be/E4IRq-e7bzY
+
+4. Part 2 - What are the basic components of mobile cloud development? : https://youtu.be/hhA1k7ScCfM
+
+5. Part 3 - Android Native Client : https://youtu.be/h-S93xiEKIQ?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+
+6. Part 3 - Server in NodeJS : https://youtu.be/gh57gdSIzE8?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
