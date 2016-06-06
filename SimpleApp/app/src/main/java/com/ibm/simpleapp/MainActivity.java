@@ -153,11 +153,11 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
                 }
                 else{ //if the login is not successful
 
-                    String desc = responseObject.getString( "description" );
+                    //String desc = responseObject.getString( "description" );
 
                     //show the error
                     TextView errView = (TextView) findViewById( R.id.txtError );
-                    errView.setText( desc );
+                    errView.setText( "Incorrect credentials" );
                     //Toast.makeText( getApplicationContext() , desc, Toast.LENGTH_LONG ).show();
 
 

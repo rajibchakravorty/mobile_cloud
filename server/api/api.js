@@ -4,12 +4,6 @@ R Chakravorty, IBM Research, 2016
 
 var appRouter = function(app) {
 
-   //sample api 
-   app.get( "/", function( req,res ){
-
-      res.send( "Hello World" );
-   });
-
    /*
     Function to check the user credential
 
@@ -39,10 +33,14 @@ var appRouter = function(app) {
           return res.send( JSON.stringify( {"result":"error", "description" : "Credential missing" } ) );
       }
 
+
+      console.log( "Request received. Checking...." )
+
+
       //TODO:This function simply checks the user and
       //password against some specific example
-      //perhaps this is where this server needs to
-      //check in a database
+      //A more sophisticated check function will check a 
+      //database at this point
 
       //TODO: Notice this function accepts parameters
       //in plain text - not good for security.
@@ -60,6 +58,7 @@ var appRouter = function(app) {
       }
 
       else{
+
           //well, it seems the user is not our student
           return res.send( JSON.stringify( {"result": "error", "description": "Incorrect credentials" } ) );
       }
