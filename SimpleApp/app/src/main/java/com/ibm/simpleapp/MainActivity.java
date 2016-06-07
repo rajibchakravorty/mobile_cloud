@@ -115,7 +115,8 @@ public class MainActivity extends AppCompatActivity implements TaskReceiver {
         //Android allows Asynchronous call to any remote functionality
         //Therefore the system will execute the command and then wait
         //for any response to come back from remote server
-        CheckLogin cl = new CheckLogin( "http://10.0.2.2:3000/checklogin" );
+        //CheckLogin cl = new CheckLogin( "http://10.0.2.2:3000/checklogin" );
+        CheckLogin cl = new CheckLogin( "http://mobilecloudcoursejs.mybluemix.net/checklogin" );
         cl.setReceiver( this );
         cl.execute( userText.getText().toString(), passwordText.getText().toString() );
 
