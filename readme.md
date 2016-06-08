@@ -1,7 +1,6 @@
 ## Mobile Cloud Application development
 
-
-The simple online based demostration of mobile cloud application development.
+The simple demostration of mobile cloud application development and deployment on Bluemix.
 
 ### Contents:
 
