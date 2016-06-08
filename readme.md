@@ -32,6 +32,11 @@ NodeJS on Bluemix.
 
 6. Part 3 - Server in NodeJS : https://youtu.be/gh57gdSIzE8?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
 
+7. Advanced 1 - Creating application in Bluemix : https://youtu.be/Ld_bAWyIBH0?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+
+8. Advanced 2 - Deploying code to Bluemix app : https://youtu.be/Yc2PZlnnuOY?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+
+
 ### Further reading
 
 Please consult the further_reading.odp file in the lectures folder for other useful links
