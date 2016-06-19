@@ -11,8 +11,8 @@ user.
 2. Server Application - NodeJS. The server exposes one REST API that takes
 user credential via HTTP POST method, verifies the user and return a message.
 
-3. Bluemix Based Server Application : NodeJS. The previous server side ready for
-NodeJS on Bluemix.
+3. Bluemix Based Server Application : NodeJS. The server side in the previous step but ready for
+Bluemix.
 
 4. The slides associated with Youtube videos.
 
