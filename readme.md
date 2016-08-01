@@ -19,21 +19,17 @@ Bluemix.
 
 ### Links
 
-1. Full Playlist : https://www.youtube.com/playlist?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+1. Part 1 - What is mobile cloud development and why do you need it? : https://youtu.be/E4IRq-e7bzY
 
-2. Introduction : https://youtu.be/94u5Q54Axzg?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+2. Part 2 - What are the basic components of mobile cloud development? : https://youtu.be/hhA1k7ScCfM
 
-3. Part 1 - What is mobile cloud development and why do you need it? : https://youtu.be/E4IRq-e7bzY
+3. Part 3 - Android Native Client : https://youtu.be/h-S93xiEKIQ?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
 
-4. Part 2 - What are the basic components of mobile cloud development? : https://youtu.be/hhA1k7ScCfM
+4. Part 3 - Server in NodeJS : https://youtu.be/gh57gdSIzE8?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
 
-5. Part 3 - Android Native Client : https://youtu.be/h-S93xiEKIQ?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+5. Advanced 1 - Creating application in Bluemix : https://youtu.be/Ld_bAWyIBH0?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
 
-6. Part 3 - Server in NodeJS : https://youtu.be/gh57gdSIzE8?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
-
-7. Advanced 1 - Creating application in Bluemix : https://youtu.be/Ld_bAWyIBH0?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
-
-8. Advanced 2 - Deploying code to Bluemix app : https://youtu.be/Yc2PZlnnuOY?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
+6. Advanced 2 - Deploying code to Bluemix app : https://youtu.be/Yc2PZlnnuOY?list=PLIhrPGqyfMrjtY2ul21FVudVJ714bfuRn
 
 
 ### Further reading
